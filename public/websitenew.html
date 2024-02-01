@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+
+    <script>
+        function loadVideo() {
+            var videoIframe = document.getElementById("video-iframe");
+            videoIframe.src = "https://www.youtube.com/embed/C0Rl4m38gOU?si=DWTSsI04EJZDOZpo";
+        }
+    </script>
+    
+    <title>Reconstruire le Passé avec la Réalité Virtuelle</title>
+    <style>
+        
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('back.gif'); 
+       
+        background-color: #000000; 
+        color: rgb(93, 255, 93); 
+        font-size: 18px;
+
+        
+    }
+
+        header {
+        background: linear-gradient(135deg, #17d2eb 0%, #104F78 100%);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+
+        animation: pulse 5s infinite alternate;
+        }
+
+@keyframes pulse {
+    0% {
+        background-size: 100% 100%;
+    }
+    100% {
+        background-size: 120% 120%;
+    }
+}
+
+
+@keyframes pulse {
+    0% {
+        background-size: 100% 100%;
+    }
+    100% {
+        background-size: 120% 120%;
+    }
+}
+
+section {
+        margin-bottom: 30px;
+        background-color: rgba(129, 128, 128, 0.8); 
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #04f1f1; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-weight: bold; /* Make the header fonts bold */
+    }
+h1 {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typeText 4s steps(15);
+        font-size: 24px;
+        position: relative;
+    }
+
+
+h1::before, h1::after {
+    content: '⚙️'; 
+    display: inline-block;
+    font-size: 24px;
+    margin: 0 10px;
+    transform: rotate(45deg);
+    animation: spin 2s infinite linear; 
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+        
+        nav {
+        background-color: #333;
+        text-align: center;
+        padding: 20px; 
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: inline;
+            margin: 0 20px;
+            text-align: center;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #c3f708;
+        }
+
+        
+        main {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+        margin-bottom: 30px;
+        background-color: rgba(102, 102, 102, 0.6); /* Adjust the alpha value for more transparency */
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        sections {
+        margin-bottom: 30px;
+        background-color: rgba(102, 102, 102, 0); /* Completely transparent */
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p.intro-text {
+            font-size: 18px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        
+        video {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+       
+        @keyframes typeText {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .center-video {
+        display: block;
+        margin: 0 auto;
+    }
+
+    
+     .cool-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #17d2eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cool-button:hover {
+            background-color: #c3f708;
+        }
+
+        .video-container {
+            width: 800px; 
+            height: 450px; 
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .video-frame {
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-to-top-button {
+        display: block;
+        text-align: center;
+        margin-top: 20px; 
+        color: rgb(5, 5, 5);
+        background-color: rgba(129, 128, 128, 0.8); 
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        }
+
+    .back-to-top-button:hover {
+        background-color: #f11212;
+    }
+
+    .red-button {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.red-button:hover {
+    background-color: #ff3333;
+}
+
+.video-container {
+    width: 560px;
+    height: 315px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.video-frame {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    
+    <header id="top">
+        <h1>Reconstruire le Passé avec la Réalité Virtuelle et la Modélisation 3D</h1>
+        
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#section1">Introduction</a></li>
+            <li><a href="#section2">Reconstituer des Événements Historiques</a></li>
+            <li><a href="#section3">Reconstruire des Sites du Patrimoine Culturel</a></li>
+            <li><a href="#section5">Technologies et Outils Utilisés</a></li>
+            <li><a href="#section6">Entretien et Témoignage</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="section1">
+            <h2>Introduction à la Réalité Virtuelle et à la Modélisation 3D</h2>
+            <p>La réalité virtuelle (RV) et la modélisation 3D sont des technologies innovantes qui nous permettent de créer des mondes virtuels en trois dimensions grâce à des ordinateurs puissants. Elles ont révolutionné notre approche de l'exploration du passé, que ce soit en revivant des événements historiques majeurs ou en redécouvrant des trésors culturels. Dans ce voyage, nous allons explorer comment ces technologies élargissent nos horizons en matière de compréhension historique.</p>
+            <img src="ar.jpeg" alt="Image de réalité virtuelle" width="40%">
+        </section>
+
+        <section id="section2">
+            <h2>Reconstituer des Événements Historiques</h2>
+            <p>La reconstitution d'événements historiques à l'aide de la réalité virtuelle offre une approche immersive qui redonne vie au passé. Cette technologie permet de recréer des moments significatifs de l'histoire, tels que des batailles majeures, des cérémonies importantes, ou des moments emblématiques.</p>
+            
+            <p>Les avantages de la reconstitution d'événements historiques en RV sont multiples :</p>
+            
+            <ul>
+                <p>
+                    <strong>Expérience immersive :</strong> Les participants ont l'opportunité de s'immerger dans l'Histoire et de revivre ces moments historiques, grâce à des environnements virtuels réalistes.
+                </p>
+                <p>
+                    <strong>Éducation et sensibilisation :</strong> Les reconstitutions historiques offrent une nouvelle approche pédagogique pour l'apprentissage de l'histoire. Les étudiants ou les personnes assoifées de connaissances peuvent ainsi mieux comprendre et mémoriser les événements du passé.
+                    
+                </p>
+                <p>
+                    <strong>Recherche historique :</strong> La technologie de réalité virtuelle permet aux chercheurs de revisiter l'histoire en reconstituant des scènes historiques en 3D, offrant ainsi une expérience immersive. Cela les aide à tester des hypothèses, résoudre des énigmes historiques et obtenir de nouvelles perspectives sur le passé.
+                </p>
+            </ul>
+
+            <p>Ci-dessous, nous pouvons avoir un aperçu de ce à quoi ressemblait la Guerre de Sécession en 1861.</p>
+            
+            <div class="video-container">
+                <iframe class="video-frame" src="https://www.youtube.com/embed/m7h4XuvLrmg?si=_02v721gJWYTAPIT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <p style="margin-top: 30px;">Ainsi, la reconstitution d'événements historiques en RV offre une expérience immersive qui enrichit notre compréhension du passé, ouvrant de nouvelles perspectives pour l'éducation et la recherche.</p>
+            <a href="#top" class="back-to-top-button">Back to Top</a>
+        </section>
+    
+        
+
+        <section id="section3">
+            <h2>Reconstruction des Sites du Patrimoine Culturel</h2>
+            <p>La reconstruction des sites du patrimoine culturel à l'aide de la réalité virtuelle et de la modélisation 3D est une avancée majeure dans la préservation et la mise en valeur de notre héritage culturel. Cette technologie nous permet de découvrir, restaurer et explorer des sites et des monuments, des trésors culturels qui ont façonné notre histoire.</p>
+            
+            <p>Voici comment la technologie est utilisée pour préserver et explorer notre patrimoine culturel :</p>
+            
+            <ul>
+                <p>
+                    <strong>Reconstitution de Sites Archéologiques :</strong> Des sites archéologiques du monde entier, tels que les cités antiques, les amphithéâtres romains et les palais royaux, sont minutieusement reconstitués en 3D. Les visiteurs peuvent ainsi se promener dans ces lieux anciens et en apprendre davantage sur leur histoire.
+                </p>
+                <p>
+                    
+                    <strong>Restauration de Monuments Historiques :</strong> Les monuments historiques endommagés par le temps ou la guerre sont restaurés numériquement. Cela permet de contempler ces monuments à leur apogée, tout en aidant à la préservation réelle de ces sites.
+                </p>
+                <p>
+                    <strong>Visites Virtuelles de Musées et de Sites Culturels :</strong> Les visiteurs peuvent explorer des collections d'art, des expositions spéciales et des sites culturels sans avoir à quitter le confort de leur domicile.
+                </p>
+            </ul>
+        
+            <p>L'Égypte ancienne remodelée pour voir à quoi cela ressemblait:</p>
+            <div class="video-container">
+                <iframe  class="video-frame" src="https://www.youtube.com/embed/omajagaozk0?si=vamhOkycx7rB5Bit" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <p style="margin-top: 30px;">L'application de ces technologies à la reconstruction du patrimoine culturel révolutionne la préservation de notre histoire, ouvrant la voie à une perspective inédite sur notre héritage.</p>
+            <a href="#top" class="back-to-top-button">Back to Top</a>
+        </section>
+
+
+        <section id="section5">
+            <h2>Technologies et Outils Utilisés</h2>
+            <p>La reconstitution d'événements historiques ou des sites du patrimoine culturel sont possibles grâce à l'utilisation de diverses technologies et outils de pointe. Ces derniers permettent de concevoir des expériences immersives et éducatives qui rendent le passé plus accessible au public contemporain..</p>
+            
+            <p>Voici quelques-unes des technologies et des outils couramment utilisés dans ce domaine :</p>
+            
+            <ul>
+                <p>
+                    <strong>Réalité Virtuelle (RV) :</strong> La réalité virtuelle est le pilier central de ces reconstitutions. Elle permet aux participants de s'immerger complètement dans des environnements virtuels, qu'il s'agisse de champs de bataille, d'anciennes civilisations ou de musées historiques.
+                </p>
+                <p style="margin-top: 30px;">
+                    <strong>Modélisation 3D :</strong> La modélisation 3D est utilisée pour recréer des objets, des bâtiments et des sites historiques. Les détails sont modélisés avec précision pour garantir l'authenticité visuelle.
+                </p>
+                <img src="3d.gif" alt="3D Modeling GIF" width="40%" style="margin-top: 20px;">
+                <p style="margin-top: 30px;">
+                    <strong>Logiciels de Conception Assistée par Ordinateur (CAO) :</strong> Les logiciels de CAO sont utilisés pour créer des modèles 3D précis. Ils sont essentiels pour la modélisation architecturale et la reconstruction de bâtiments historiques. Des exemples de logiciels de CAO qui sont couramment utlisés sont: AutoCAD et SolidWorks. Ci-dessous un exemple de l'interface de AutoCAD. 
+                </p>
+                <img src="auto.gif" alt="3D Modeling GIF" width="90%" style="margin-top: 20px;">
+                <p style="margin-top: 30px;">
+                    <strong>Casques de Réalité Virtuelle :</strong> Les casques de réalité virtuelle, tels que l'Oculus Rift et le HTC Vive, permettent aux utilisateurs de s'immerger complètement dans des environnements historiques.
+                <p style="color: red; text-align: center;"><strong>⚠ Attention à ne pas trop s'immerger non plus :P</strong></p>
+                        <img src="oops.gif" alt="3D Modeling GIF" width="60%" style="margin-top: 20px;">
+                </p>
+                
+                <p style="margin-top: 30px;">
+                    <strong>Scanners 3D :</strong> Les scanners 3D sont utilisés pour capturer des données sur des objets ou des sites historiques existants, ce qui facilite leur reproduction en 3D.
+                </p>
+
+                <img src="scanner.gif" alt="3D Modeling GIF" width="70%" style="margin-top: 20px;">
+                <p style="margin-top: 30px;">
+                    <strong>Vidéo 360 degrés :</strong> Les vidéos à 360 degrés offrent une expérience immersive en permettant aux utilisateurs de regarder autour d'eux dans des environnements reconstitués.
+                </p>
+                <div style="text-align: center;">
+                    <a class="cool-button" href="https://www.youtube.com/embed/m7h4XuvLrmg?si=_02v721gJWYTAPIT" target="_blank">Regarder la vidéo à 360°</a>
+                </div>
+                
+            </ul>
+        
+            <p>Ces technologies et outils convergent pour créer des expériences captivantes qui permettent aux gens de voyager dans le temps et de découvrir le passé d'une manière totalement nouvelle.</p>
+        
+            <a href="#top" class="back-to-top-button">Back to Top</a>
+        </section>
+        
+
+
+        <section id="section6">
+            <h2>Entretien et Témoignage</h2>
+            <p> Fabien Barati est un pionnier dans le monde de la réalité virtuelle et de la réalité augmentée. </p>
+            
+            <p>Il est le co-fondateur et PDG de Emissive, une compagnie qui crée des expériences immersives pour des institutions and marques culturelles depuis 2005.</p>
+
+            <iframe class="center-video" width="560" height="315" src="https://www.youtube.com/embed/AWlLTJ6Tu8o" frameborder="0" allowfullscreen></iframe>
+        
+            <h2>Emissive</h2>
+            <p>Emissive collabore, entre autres, avec le Musée du Louvre, le Musée Philippe Patek, l'Institut du Monde Arabe afin d'offrir des expériences uniques à leur public en altérant la manière dont les gens interagissent avec la culture, l'histoire, l'art et d'autres domaines. </p>
+            <p>Ainsi, Emissive joue un rôle clé dans la préservation du patrimoine culturel, l'éducation et la sensibilisation du public en transformant des environnements physiques en espaces interactifs et immersifs. Ces expériences permettent aux visiteurs de mieux comprendre et d'apprécier le contenu culturel, historique et artistique d'une manière engageante et mémorable. </p>
+            
+            <div style="text-align: center;">
+                <a class="cool-button" href="https://www.emissive.fr/en/" target="_blank">Visitez Emissive</a>
+            </div>
+            <a href="#top" class="back-to-top-button">Back to Top</a>
+        </section>
+
+        <section id="section7">
+            <p>Ce site nous a permis de découvrir l'impact significatif de la réalité virtuelle et de la modélisation 3D sur notre compréhension du passé. Grâce à ces technologies, nous avons exploré l'histoire et le patrimoine culturel de manière unique. En partageant cette précieuse connaissance, nous contribuons à préserver notre héritage pour les générations futures.
+
+            </p>
+            
+        </section>
+        
+        <sections style="display: flex; justify-content: center;">
+            <a href="https://www.youtube.com/watch?v=C0Rl4m38gOU?autoplay=1" class="red-button" target="_blank"> :) </a>
+        </sections>
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Reconstruire le Passé avec la Réalité Virtuelle</p>
+    </footer>
+
+    
+</body>
+</html>
