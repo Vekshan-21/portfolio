@@ -8,6 +8,26 @@ body{
     color: yellow;
 }
 
+.h1::before,
+.h1::after {
+    content: '⚙️'; 
+    display: inline-block;
+    font-size: 24px;
+    margin: 0 10px;
+    transform: rotate(45deg);
+    animation: spin 2s infinite linear;
+    font-family: 'Arial', sans-serif; /* Fallback font */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .hidden {
     display: none;
 }
